@@ -3,12 +3,16 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
     "eslint": "7.32.0",
+    "eslint-config-custom": "workspace:*",
     "prettier": "^2.5.1",
     "turbo": "latest"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.25.2"
   }
 }
